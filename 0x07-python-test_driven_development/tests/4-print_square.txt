@@ -1,0 +1,59 @@
+Testing the 4-print_square.txt file
+===================================
+
+"""Importing 4-print_square"""
+>>> print_square = __import__('4-print_square').print_square
+
+"""When you pass an integer as an argument."""
+>>> print_square(3)
+###
+###
+###
+
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+"""When you pass a negative number as an argument."""
+>>> print_square(-2)
+Traceback (most recent call last):
+  ...
+    raise ValueError("size must be >= 0")
+ValueError: size must be >= 0
+
+"""When you pass a zero as an argument."""
+>>> print_square(0)
+
+"""When you pass a float as an argument."""
+>>> print_square(2.5)
+Traceback (most recent call last):
+  ...
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+"""When you pass a string as an argument."""
+>>> print_square("square")
+Traceback (most recent call last):
+  ...
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+"""When you don't pass an argument."""
+>>> print_square()
+Traceback (most recent call last):
+  ...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+"""Adding two arguments"""
+>>> print_square(1,2)
+Traceback (most recent call last):
+  ...
+TypeError: print_square() takes 1 positional argument but 2 were given
