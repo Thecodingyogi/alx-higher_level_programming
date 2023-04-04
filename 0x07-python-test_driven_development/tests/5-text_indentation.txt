@@ -1,9 +1,13 @@
 Testing 5-text_indentation.py file
 ==================================
 
-"""
+"""Imports 5-text_indentation"""
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
+"""Takes space at the beginning"""
+>>> text_indentation("    Hello, Cynthia.")
+Hello, Cynthia.
+"""Takes a long string"""
 >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
 ... Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
 ... Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
@@ -38,21 +42,46 @@ Inde sermone vario sex illa a Dipylo stadia confecimus.
 Sin aliud quid voles, postea.
 
 Quae animi affectio suum cuique tribuens atque hanc, quam dico.
-
->>> text_indentation("   Hello, world!")
-Hello, world!
-
->>> text_indentation("Is Cynthia a softaware engineer?")
-Is Cynthia a softaware engineer?
-
->>> text_indentation(65)
-Traceback (most recent call last):
-  ...
-    raise TypeError("text must be a string")
-TypeError: text must be a string
-
->>> text_indentation("Cynthia",87)
+"""Takes two strings"""
+>>> text_indentation("Cynthia","Tonui")
 Traceback (most recent call last):
   ...
 TypeError: text_indentation() takes 1 positional argument but 2 were given
-"""
+
+"""Takes an integer as an argument"""
+>>> text_indentation(12)
+Traceback (most recent call last):
+  ...
+TypeError: text must be a string
+
+"""Takes an undefined argument"""
+>>> text_indentation(Cynthia)
+Traceback (most recent call last):
+  ...
+NameError: name 'Cynthia' is not defined
+
+"""Has spaces at the beginning and end"""
+>>> text_indentation("  Hello. How are you?  ")
+Hello.
+
+How are you?
+
+"""Takes no arguments"""
+>>> text_indentation()
+Traceback (most recent call last):
+  ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+"""Takes characters"""
+>>> text_indentation(". : ?")
+.
+
+:
+
+?
+
+"""Testing how it handles a newline at the beginning and end"""
+>>> text_indentation("\n Hey Cynthia, how are you doing?\n")
+
+ Hey Cynthia, how are you doing?
+
