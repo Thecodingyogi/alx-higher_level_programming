@@ -1,0 +1,47 @@
+
+Testing the 3-say_my_name.py file
+==================================
+
+"""Importing 3-say_my_name."""
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+"""When you pass strings as arguments."""
+>>> say_my_name("Cynthia", "Tonui")
+My name is Cynthia, Tonui
+
+"""When you pass one string as an argument."""
+>>> say_my_name("Cynthia")
+My name is Cynthia, 
+
+"""When you pass an integer as the second argument."""
+>>> say_my_name("Cynthia",31)
+Traceback (most recent call last):
+  ...
+    raise TypeError("last_name must be a string")
+TypeError: last_name must be a string
+
+"""When you don't pass strings as arguments."""
+>>> say_my_name(Cynthia, Tonui)
+Traceback (most recent call last):
+  ...
+NameError: name 'Cynthia' is not defined
+
+"""Passing an integer as the first argument."""
+>>> say_my_name(14,"Tonui")
+Traceback (most recent call last):
+  ...
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+
+"""When you don't pass an argument."""
+>>> say_my_name()
+Traceback (most recent call last):
+  ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+"""When you pass a zero as an argument."""
+>>> say_my_name(0)
+Traceback (most recent call last):
+  ...
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
