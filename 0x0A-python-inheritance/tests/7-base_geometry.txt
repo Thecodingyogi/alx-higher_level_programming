@@ -1,0 +1,57 @@
+Testing the base-geometry file
+==============================
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+"""Passing integers"""
+>>> print(bg.integer_validator("my_int", 12))
+None
+>>> print(bg.integer_validator("age", 12))
+None
+
+"""Passing 0 as an argument"""
+>>> print(bg.integer_validator("my_int", 0))
+Traceback (most recent call last):
+  ...
+ValueError: my_int must be greater than 0
+
+"""When you don't pass an integer"""
+>>> print(bg.integer_validator("my_int", "Cynthia"))
+Traceback (most recent call last):
+  ...
+TypeError: my_int must be an integer
+
+>>> print(bg.integer_validator(31, "Cynthia"))
+Traceback (most recent call last):
+  ...
+TypeError: 31 must be an integer
+
+"""Passing a negative number as an argument"""
+>>> print(bg.integer_validator("my_int", -12))
+Traceback (most recent call last):
+  ...
+ValueError: my_int must be greater than 0
+
+"""Adding more arguments than required"""
+>>> print(bg.integer_validator("my_int", 12, 9))
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+"""Testing the integer validator"""
+>>> print(bg.integer_validator("integer", 12))
+None
+
+"""Testing the area() function"""
+>>> print(bg.area())
+Traceback (most recent call last):
+  ...
+Exception: area() is not implemented
+
+"""Passing an argument to the area() function"""
+>>> print(bg.area(1))
+Traceback (most recent call last):
+  ...
+TypeError: area() takes 1 positional argument but 2 were given
+>>> 
