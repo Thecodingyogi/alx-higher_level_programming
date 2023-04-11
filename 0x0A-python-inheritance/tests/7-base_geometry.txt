@@ -54,4 +54,33 @@ Exception: area() is not implemented
 Traceback (most recent call last):
   ...
 TypeError: area() takes 1 positional argument but 2 were given
->>> 
+
+"""Passing no arguments"""
+>>> print(bg.integer_validator())
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+
+"""Passing one argument"""
+>>> print(bg.integer_validator(1))
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> print(bg.integer_validator("Cynthia"))
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+"""Passing a floating point value as an argument"""
+>>> print(bg.integer_validator("float", 1.9))
+Traceback (most recent call last):
+  ...
+TypeError: float must be an integer
+
+"""Passing a boolean"""
+>>> print(bg.integer_validator("bool", False))
+Traceback (most recent call last):
+  ...
+ValueError: bool must be greater than 0
