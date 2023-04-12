@@ -1,4 +1,4 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 
 """Defines a function that creates an object"""
 import json
