@@ -305,7 +305,7 @@ class TestSquare_update_kwargs(unittest.TestCase):
     def test_update_kwargs_size_negative(self):
         s = Square(12, 12, 12, 12)
         with self.assertRaisesRegex(ValueError, 'width must be > 0'):
-            s.update(size=-2)
+            s.update(size=-2)i
 
     def test_update_kwargs_x_negative(self):
         s = Square(12, 12, 12, 12)

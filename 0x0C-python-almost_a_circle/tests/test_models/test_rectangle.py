@@ -453,3 +453,7 @@ class TestRectangle_update_args(unittest.TestCase):
         r = Rectangle(4, 6, 2, 1, 12)
         with self.assertRaisesRegex(ValueError, 'y must be >= 0'):
             r.update(11, 6, 43, 13, -5)
+
+
+if __name__ == '__main__':
+    unittest.main()
