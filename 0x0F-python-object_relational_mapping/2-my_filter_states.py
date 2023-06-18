@@ -14,6 +14,7 @@ if __name__ == '__main__':
                 ORDER BY states.id".format(sys.argv[4]))
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == sys.argv[4]:
+            print (row)
     cur.close()
     db.close()
