@@ -6,7 +6,7 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    letter = "" if len(sys.argv[1]) == 1 else sys.argv[1]
+    letter = "" if len(sys.argv) == 1 else sys.argv[1]
     payload = {"q": letter}
 
     req = requests.post("http://0.0.0.0:5000/search_user", data=payload)
