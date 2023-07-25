@@ -1,14 +1,12 @@
 #!/usr/bin/node
 const request = require('request');
-const characterId = 18;
-const API_URL = `https://swapi-api.alx-tools.com/api/people/${characterId}/`;
-request.get(process.argv[2], (error, response, body) => {
-  if (error) {
-    console.log(error);
-  } else {
+request(process.argv[2], function (error, response, body) {
+  if (!error) {
     const results = JSON.parse(body).results;
-    const moviesWithWedgeAntilles = results.filter((film) =>
-      film.characters.includes(API_URL));
-    console.log(`${moviesWithWedgeAntilles.length}`);
+    console.log(results.reduce((count, movie) => {
+      return movie.characters.find((character) => character.endsWith('/18/'))
+        ? count + 1
+        : count;
+    }, 0));
   }
 });
