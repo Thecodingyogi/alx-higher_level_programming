@@ -2,7 +2,7 @@
 const request = require('request');
 const characterId = 18;
 const API_URL = `https://swapi-api.alx-tools.com/api/people/${characterId}/`;
-request.get(process.argv[2], (error, response, body) => {
+request(process.argv[2], (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
